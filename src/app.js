@@ -5,7 +5,7 @@ const forecast = require('./utils/forecast')
 
 const app = express()
 
-// Trying to take port value from the environment variable (for heroku link) or set it to 3000, if that does not exist
+// Trying to take port value from the environment variable (will have a valid value when heroku tries to access it) or set it to 3000, if that does not exist
 const port = process.env.PORT || 3000
 
 // Define paths for Express config
