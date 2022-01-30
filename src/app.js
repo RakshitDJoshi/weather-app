@@ -4,6 +4,8 @@ const hbs = require('hbs')
 const forecast = require('./utils/forecast')
 
 const app = express()
+// Trying to take port value from the environment variable (for heroku link) or set it to 3000, if that does not exist
+const port = process.env.PORT || 3000
 
 // Define paths for Express config
 const publicDirPath = path.join(__dirname, '../public')
@@ -75,6 +77,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
